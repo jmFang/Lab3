@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        app:layout_widthPercent="100%"
+        app:layout_heightPercent="30%"
+        android:id="@+id/upPart"
+        android:background="#1A000000">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/back"
+            android:layout_margin="10dp"
+            app:elevation="8dp"
+            android:id="@+id/retImage"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/mcvitie"
+            android:layout_margin="0dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:id="@+id/product_image"
+            android:layout_centerInParent="true"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="hello world"
+            android:textSize="24sp"
+            android:textColor="#D5000000"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="10dp"
+            android:id="@+id/product_name"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/empty_star"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="10dp"
+            android:id="@+id/starTab"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        app:layout_widthPercent="100%"
+        app:layout_heightPercent="25%"
+        android:layout_below="@id/upPart"
+        android:background="@color/colorWhite"
+        android:id="@+id/midPart">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:showDividers="end"
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="价格"
+                    android:id="@+id/price"
+                    android:gravity="left|center_vertical"
+                    android:paddingLeft="10dp"
+                    android:textColor="#D5000000"
+                    android:textSize="16dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:text="类型"
+                    android:gravity="left|center_vertical"
+                    android:paddingLeft="10dp"
+                    android:textSize="16dp"
+                    android:id="@+id/type"
+                    android:textColor="#8A000000"
+                    android:layout_below="@id/price" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:text="信息"
+                    android:gravity="left|center_vertical"
+                    android:paddingLeft="10dp"
+                    android:textSize="16dp"
+                    android:id="@+id/info"
+                    android:layout_below="@id/price"
+                    android:textColor="#8A000000"
+                    android:layout_toRightOf="@id/type" />
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:id="@+id/shoplist"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/shoplist" />
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="30dp"
+                    android:background="#1E000000"
+                    android:layout_toLeftOf="@id/shoplist"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:layout_gravity="center_horizontal" />
+
+            </RelativeLayout>
+
+            <View  android:layout_height="1px"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="#1E000000" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="更多商品信息"
+                android:gravity="left|center_vertical"
+                android:paddingLeft="10dp"
+                android:textColor="#D5000000"
+                android:textSize="18dp" />
+
+            <View  android:layout_height="40px"
+                android:layout_width="match_parent"
+                android:background="#1E000000" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+    <ListView
+        app:layout_widthPercent="100%"
+        app:layout_heightPercent="45%"
+        android:layout_below="@id/midPart"
+        android:layout_width="match_parent"
+        android:id="@+id/listview_in_details"
+        android:layout_height="wrap_content">
+    </ListView>
+</android.support.percent.PercentRelativeLayout>

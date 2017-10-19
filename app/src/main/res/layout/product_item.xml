@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="20dp">
+
+    <TextView
+        android:id="@+id/product_head"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left|center_vertical"
+        android:layout_marginLeft="20dp"
+        android:text="E"
+        android:gravity="center_horizontal|center_vertical"
+        android:textSize="24sp"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/shape_radius"
+        />
+
+    <TextView
+        android:id="@+id/product_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left|center_vertical"
+        android:text="Enchated Forest"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="2dp"
+        android:textSize="18sp" />
+</LinearLayout>

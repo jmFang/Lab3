@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp">
+
+    <TextView
+        android:id="@+id/shoplist_product_head"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="20dp"
+        android:text="E"
+        android:gravity="center_horizontal|center_vertical"
+        android:textSize="24sp"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/shape_radius"
+        />
+
+    <TextView
+        android:id="@+id/shoplist_product_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/shoplist_product_head"
+        android:layout_centerVertical="true"
+        android:text="Enchated Forest"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="2dp"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/shoplist_product_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="2dp"
+        android:text="￥ 120.00"
+        android:textSize="18sp" />
+
+</RelativeLayout>
