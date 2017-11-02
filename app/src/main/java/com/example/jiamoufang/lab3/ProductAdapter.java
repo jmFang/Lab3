@@ -77,7 +77,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
                 intent.putExtra("price", product.getProductPrice());
                 intent.putExtra("type", product.getType());
                 intent.putExtra("info", product.getInformation());
-                intent.putExtra("image", product.getPicture());
+                intent.putExtra("imageId", product.getPicture());
                 parent.getContext().startActivity(intent);// 原来startActivity 启动也是要上下文的
             }
         });

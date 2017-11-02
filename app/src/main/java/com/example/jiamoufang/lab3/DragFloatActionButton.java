@@ -12,7 +12,7 @@ import android.view.animation.DecelerateInterpolator;
  * Created by jiamoufang on 2017/10/19.
  */
 
-public class DragFloatActionButton extends FloatingActionButton{
+public class DragFloatActionButton extends FloatingActionButton {
 
     private int parentHeight;
     private int parentWidth;
