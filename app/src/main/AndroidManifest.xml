@@ -9,20 +9,33 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".MainActivity"
             android:launchMode="singleInstance">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ProductDetails"></activity>
-        <receiver android:name=".MyBroadcastReceiver"
+        <activity android:name=".ProductDetails" />
+
+        <receiver
+            android:name=".MyBroadcastReceiver"
             android:enabled="true"
             android:exported="true">
             <intent-filter android:priority="100">
-                <action android:name="com.example.jiamoufang.lab3.MyStaticFilter"/>
+                <action android:name="com.example.jiamoufang.lab3.MyStaticFilter" />
             </intent-filter>
+        </receiver>
+        <receiver android:name=".Widget.NewAppWidget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="com.example.jiamoufang.lab3.StaticBroadcastToWidget"/>
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/new_app_widget_info" />
         </receiver>
     </application>
 

@@ -2,6 +2,8 @@ package com.example.jiamoufang.lab3;
 
 import android.app.Notification;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.appwidget.AppWidgetManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -27,7 +29,10 @@ import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RemoteViews;
 import android.widget.Toast;
+
+import com.example.jiamoufang.lab3.Widget.NewAppWidget;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -36,6 +41,7 @@ import org.greenrobot.eventbus.ThreadMode;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.UUID;
 
 import jp.wasabeef.recyclerview.adapters.ScaleInAnimationAdapter;
 import jp.wasabeef.recyclerview.animators.OvershootInLeftAnimator;
@@ -49,6 +55,8 @@ public class MainActivity extends AppCompatActivity {
     private FloatingActionButton fab;
     private  RecyclerView recyclerView;
     private ListView listView;
+    private int mAppWidgetId;
+    private NewAppWidget newAppWidget;
     //private LocalReceiver localReceiver;
     //private LocalBroadcastManager localBroadcastManager;
     //private IntentFilter intentFilter;
@@ -62,12 +70,27 @@ public class MainActivity extends AppCompatActivity {
         //初始化列表
         initProducts();
         initShopList();
-        //静态广播
+
+        //在configuration activity 对widget进行配置
+     /*   Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            mAppWidgetId = extras.getInt(AppWidgetManager.EXTRA_APPWIDGET_ID, AppWidgetManager.INVALID_APPWIDGET_ID);
+            AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(MainActivity.this);
+            RemoteViews views = new RemoteViews(getPackageName(),R.layout.new_app_widget);
+            views.setTextViewText(R.id.appwidget_text,extras.getString("name"));
+            views.setImageViewResource(R.id.widget_imageView,extras.getInt("imageId"));
+            Intent resultValue = new Intent();
+            resultValue.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, mAppWidgetId);
+            setResult(RESULT_OK, resultValue);//设置完成
+            finish();
+        }//获取App widget id*/
+
+        //静态广播 to widget
         Random random = new Random();
         int rand = random.nextInt(productList.size());
         Product selectedProduct = productList.get(rand);
 
-        Intent intentBroadcast = new Intent("com.example.jiamoufang.lab3.MyStaticFilter");
+        Intent intentBroadcast = new Intent("com.example.jiamoufang.lab3.StaticBroadcastToWidget");
         Bundle bundle = new Bundle();
         bundle.putString("name", selectedProduct.getProductName());
         bundle.putString("price", selectedProduct.getProductPrice());
